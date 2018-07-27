@@ -1,7 +1,7 @@
-package com.guoqiaosen.example;
+package com.gqs.util;
 
 /**
- * VersionUtil ，比较版本号
+ * VersionUtil 锛屾瘮杈冪増鏈彿
  */
 public class VersionUtil {
 	
@@ -13,7 +13,7 @@ public class VersionUtil {
 	}
 
 	/**
-	 * 比较版本号的大小,前者大则返回一个正数,后者大返回一个负数,相等则返回0
+	 * 姣旇緝鐗堟湰鍙风殑澶у皬,鍓嶈�呭ぇ鍒欒繑鍥炰竴涓鏁�,鍚庤�呭ぇ杩斿洖涓�涓礋鏁�,鐩哥瓑鍒欒繑鍥�0
 	 *
 	 * @param version1
 	 * @param version2
@@ -24,18 +24,18 @@ public class VersionUtil {
 		if (version1 == null || version2 == null) {
 			throw new Exception("compareVersion error:illegal params.");
 		}
-		// 切割点 "."；
+		// 鍒囧壊鐐� "."锛�
 		String[] versionArray1 = version1.split("\\.");
 		String[] versionArray2 = version2.split("\\.");
 		int idx = 0;
-		// 取最小长度值
+		// 鍙栨渶灏忛暱搴﹀��
 		int minLength = Math.min(versionArray1.length, versionArray2.length);
 		int diff = 0;
-		// 先比较长度 再比较字符
+		// 鍏堟瘮杈冮暱搴� 鍐嶆瘮杈冨瓧绗�
 		while (idx < minLength && (diff = versionArray1[idx].length() - versionArray2[idx].length()) == 0 && (diff = versionArray1[idx].compareTo(versionArray2[idx])) == 0) {
 			++idx;
 		}
-		// 如果已经分出大小，则直接返回，如果未分出大小，则再比较位数，有子版本的为大；
+		// 濡傛灉宸茬粡鍒嗗嚭澶у皬锛屽垯鐩存帴杩斿洖锛屽鏋滄湭鍒嗗嚭澶у皬锛屽垯鍐嶆瘮杈冧綅鏁帮紝鏈夊瓙鐗堟湰鐨勪负澶э紱
 		diff = (diff != 0) ? diff : versionArray1.length - versionArray2.length;
 		return diff;
 	}
