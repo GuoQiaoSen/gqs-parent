@@ -9,5 +9,6 @@
   <modules>
   	<module>gqs-common</module>
   	<module>gqs-entity</module>
+  	<module>springbootone</module>
   </modules>
 </project>
