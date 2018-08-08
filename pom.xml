@@ -10,5 +10,6 @@
   	<module>gqs-common</module>
   	<module>gqs-entity</module>
   	<module>springbootone</module>
+      <module>gqs-springbootdemo</module>
   </modules>
 </project>
