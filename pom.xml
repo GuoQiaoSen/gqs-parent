@@ -10,6 +10,6 @@
     <modules>
         <module>gqs-common</module>
         <module>gqs-entity</module>
-        <module>gqs-springbootdemo</module>
+        <module>gqs-springboot</module>
     </modules>
 </project>
