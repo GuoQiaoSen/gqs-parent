@@ -11,5 +11,6 @@
         <module>gqs-common</module>
         <module>gqs-entity</module>
         <module>gqs-springboot</module>
+        <module>gqs-study</module>
     </modules>
 </project>
