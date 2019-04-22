@@ -3,6 +3,7 @@ package com.gqs.example;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.SortingParams;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -11,13 +12,27 @@ import java.util.concurrent.TimeUnit;
 
 public class DateExample {
 
-	public static void main(String[] args) {
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		String stringDate = format.format(new Date());
-		System.out.println(stringDate);
-	}
+    public static void main(String[] args) {
+        dateToStr();
+    }
 
-	public static class RedisExample {
+    public static void dateToStr() {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String stringDate = format.format(new Date());
+        System.out.println(stringDate);
+    }
+
+    public static void strToDate() {
+        String a = "2019-09-19";
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date parse = format.parse(a);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static class RedisExample {
 
         Jedis jedis = new Jedis("localhost");
 
@@ -75,7 +90,7 @@ public class DateExample {
             System.out.println("增加多个键值对：" + jedis.mset("key01", "value01", "key02", "value02", "key03", "value03"));
             System.out.println("获取多个键值对：" + jedis.mget("key01", "key02", "key03"));
             System.out.println("获取多个键值对：" + jedis.mget("key01", "key02", "key03", "key04"));
-            System.out.println("删除多个键值对：" + jedis.del(new String[] { "key01", "key02" }));
+            System.out.println("删除多个键值对：" + jedis.del(new String[]{"key01", "key02"}));
             System.out.println("获取多个键值对：" + jedis.mget("key01", "key02", "key03"));
 
             jedis.flushDB();
@@ -93,7 +108,7 @@ public class DateExample {
             System.out.println(jedis.get("key3"));
 
             System.out.println("===========获取原值，更新为新值==========");// GETSET is an atomic set this value and return the old
-                                                                    // value command.
+            // value command.
             System.out.println(jedis.getSet("key2", "key2GetSet"));
             System.out.println(jedis.get("key2"));
 
