@@ -14,6 +14,11 @@ import java.text.DecimalFormat;
  */
 public class DecimalExample {
 
+    public static void main(String[] args) {
+        strToDecimal();
+//        bigDecimalFormat();
+    }
+
     public static void bigDecimalFormat() {
         //0 一个数字 ; # 一个数字，不包括 0
         //保留两位小数，如果不足两位小数则自动补零
@@ -44,7 +49,8 @@ public class DecimalExample {
 
     }
 
-    public static void main(String[] args) {
-        bigDecimalFormat();
+    public static void strToDecimal() {
+        String a = "10.22";
+        System.out.println(new BigDecimal(a));
     }
 }
