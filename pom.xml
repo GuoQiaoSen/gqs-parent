@@ -13,4 +13,33 @@
         <module>gqs-springboot</module>
         <module>gqs-study</module>
     </modules>
+
+    <properties>
+        <!--<itext.version>2.1.7</itext.version>-->
+        <!--<itext.version>4.2.2</itext.version>-->
+        <itextpdf.version>5.5.13</itextpdf.version>
+        <itext-asian.version>5.2.0</itext-asian.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--<dependency>-->
+                <!--<groupId>com.lowagie</groupId>-->
+                <!--<artifactId>itext</artifactId>-->
+                <!--<version>${itext.version}</version>-->
+            <!--</dependency>-->
+
+            <dependency>
+                <groupId>com.itextpdf</groupId>
+                <artifactId>itextpdf</artifactId>
+                <version>${itextpdf.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.itextpdf</groupId>
+                <artifactId>itext-asian</artifactId>
+                <version>${itext-asian.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
