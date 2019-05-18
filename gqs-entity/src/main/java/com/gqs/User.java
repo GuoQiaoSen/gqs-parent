@@ -1,13 +1,10 @@
 package com.gqs;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Setter
-@Getter
-@SuppressWarnings("unused")
+@Data
 public class User {
-	private String name;
-	private String sex;
-
+    private String name;
+    private String sex;
+    private Integer age;
 }
