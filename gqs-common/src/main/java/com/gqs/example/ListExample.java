@@ -12,7 +12,8 @@ import java.util.List;
 public class ListExample {
 
     public static void main(String[] args) {
-        listExample();
+//        listExample();
+        removeExample();
     }
 
     /**
@@ -31,5 +32,27 @@ public class ListExample {
         list.indexOf(1L);
         // 获取元素最后出现的位置下标
         list.lastIndexOf(2L);
+    }
+
+    /**
+     * 遍历集合
+     * 根据特定条件删除集合中的某个元素时，删除操作后被删除的元素下标之后的元素都会前移1，
+     * 所以要将i减一，否则遍历会遗漏调执行删除后那个下标对应的元素
+     */
+    public static void removeExample() {
+        List<Long> list = new ArrayList<Long>();
+        list.add(1L);
+        list.add(3L);
+        list.add(4L);
+        list.add(5L);
+
+        System.out.println("删除前：" + list);
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) % 2 == 1) {
+                list.remove(i);
+                --i;
+            }
+        }
+        System.out.println("删除后：" + list);
     }
 }
