@@ -1,7 +1,8 @@
 package com.gqs.example;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.apache.commons.collections4.CollectionUtils;
+
+import java.util.*;
 
 /**
  * 描述:
@@ -13,7 +14,9 @@ public class ListExample {
 
     public static void main(String[] args) {
 //        listExample();
-        removeExample();
+//        removeExample();
+//        sort();
+        getRepeat();
     }
 
     /**
@@ -54,5 +57,67 @@ public class ListExample {
             }
         }
         System.out.println("删除后：" + list);
+    }
+
+    /**
+     * 对list进行排序
+     */
+    public static void sort() {
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(3);
+        list.add(1);
+        list.add(5);
+        list.add(4);
+        System.out.println("排序前：" + list.toString());
+
+        Collections.sort(list);
+        System.out.println("排序后：" + list.toString());
+    }
+
+    /**
+     * 判断list中是否包含重复元素
+     * <p>
+     * 在开发工作中，我们有时需要去判断List集合中是否含有重复的元素
+     * 我们不需要找出重复的元素，我们只需要返回一个Boolean类型就可以了
+     * 如果使用循环遍历的方式，将会消耗大量的性能
+     * 我们只需要将List集合转化为Set集合，再进行比较就可以实现了
+     */
+    public static void isRepeat() {
+        List<String> list = new ArrayList<String>();
+        list.add("a");
+        list.add("b");
+        list.add("a");
+        list.add("c");
+        HashSet<String> set = new HashSet<String>(list);
+        Boolean result = set.size() == list.size() ? true : false;
+        System.out.println(result);
+    }
+
+    /**
+     * 获取list集合中重复的元素
+     */
+    public static void getRepeat() {
+        //创建一个list并加入元素
+        List<String> list = new ArrayList<String>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        list.add("c");
+        list.add("a");
+        for (String str : list) {
+            System.out.println(str);
+        }
+
+        //将list放入set中对其去重
+        Set<String> set = new HashSet<String>(list);
+        System.out.println("---------------------------------------");
+
+        //获得list与set的差集
+        Collection rs = CollectionUtils.disjunction(list, set);
+        //将collection转换为list
+        List<String> list1 = new ArrayList<String>(rs);
+        for (String str : list1) {
+            System.out.println(str);
+        }
     }
 }

@@ -12,6 +12,10 @@ import java.util.Calendar;
  */
 public class DateUtils {
 
+    public static void main(String[] args) {
+
+    }
+
     /**
      * 获取某月最后一天的日期
      *

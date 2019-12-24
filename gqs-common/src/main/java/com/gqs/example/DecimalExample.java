@@ -15,8 +15,9 @@ import java.text.DecimalFormat;
 public class DecimalExample {
 
     public static void main(String[] args) {
-        strToDecimal();
+//        strToDecimal();
 //        bigDecimalFormat();
+        test();
     }
 
     public static void bigDecimalFormat() {
@@ -52,5 +53,10 @@ public class DecimalExample {
     public static void strToDecimal() {
         String a = "10.22";
         System.out.println(new BigDecimal(a));
+    }
+
+    public static void test(){
+        BigDecimal bigDecimal = new BigDecimal("0.00");
+        System.out.println(bigDecimal);
     }
 }

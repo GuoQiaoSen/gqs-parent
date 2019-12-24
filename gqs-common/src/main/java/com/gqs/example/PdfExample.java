@@ -23,16 +23,17 @@ import java.io.FileOutputStream;
 public class PdfExample {
 
     public static void main(String[] args) throws Exception {
-        example1();
-//        example2();
+//        example1();
+        example2();
     }
 
     public static void example2() throws Exception {
 
-        String fontPath = "D:\\个人资料\\msyh.ttf";
+        String fontPath = "D:\\个人资料\\msyhl.ttf0.ttf";
+//        String fontPath = "D:\\个人资料\\msyh.ttf";
         BaseFont baseFont = BaseFont.createFont(fontPath, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
         // 微软雅黑 16pt 加粗
-        Font yahei1 = new Font(baseFont, 16);
+        Font yahei1 = new Font(baseFont, 16, Font.BOLD);
         // 微软雅黑 13.6pt
         Font yahei2 = new Font(baseFont, 13.6F);
         // 微软雅黑 9pt
@@ -41,7 +42,7 @@ public class PdfExample {
         Font yahei4 = new Font(baseFont, 9);
 
         Document doc = new Document(PageSize.A4);
-        FileOutputStream out = new FileOutputStream("D:\\个人资料\\test.pdf");
+        FileOutputStream out = new FileOutputStream("D:\\个人资料\\testL.pdf");
         PdfWriter writer = PdfWriter.getInstance(doc, out);
 
         doc.open();
@@ -272,8 +273,9 @@ public class PdfExample {
             PdfPCell cell5 = new PdfPCell(new Paragraph("", yahei4));
             cell5.setPaddingLeft(10);
             cell5.setFixedHeight(40);
-            cell5.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cell5.setHorizontalAlignment(Element.ALIGN_LEFT);
             cell5.setVerticalAlignment(Element.ALIGN_MIDDLE);
+            cell5.setPhrase(new Phrase("sdfsd水电费", yahei3));
             table.addCell(cell5);
 
             PdfPCell cell6 = new PdfPCell(new Paragraph("", yahei4));

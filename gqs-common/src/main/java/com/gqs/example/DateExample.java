@@ -30,6 +30,9 @@ public class DateExample {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+        String format1 = format.format(new Date());
+
     }
 
     public static class RedisExample {

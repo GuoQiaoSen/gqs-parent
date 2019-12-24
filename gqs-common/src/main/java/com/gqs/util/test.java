@@ -9,6 +9,10 @@ public class test {
 	public static void main(String[] args) {
 		// bubbleSort();
 
+		String a = "2019-02-05";
+		String substring = a.substring(0, 7);
+		System.out.println(substring);
+
 	}
 
 	public static void bubbleSort() {
