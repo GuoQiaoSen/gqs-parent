@@ -77,11 +77,38 @@
 			<artifactId>gqs-entity</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+
+		<!--spring-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>5.1.3.RELEASE</version>
         </dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>5.1.3.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>5.1.3.RELEASE</version>
+		</dependency>
+
+		<!--容联云通讯依赖包（对应SMSUtil类）-->
+		<!--ccp rest-->
+		<dependency>
+			<groupId>com.cloopen</groupId>
+			<artifactId>java-sms-sdk</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+
+		<!--apache-->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.10</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.apache.commons</groupId>
