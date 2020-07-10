@@ -36,4 +36,50 @@ public class FileUtil {
         }
     }
 
+    /**
+     * File转byte[]
+     *
+     * @param filePath
+     * @return
+     */
+    public byte[] File2byte(String filePath) {
+        byte[] buffer = null;
+        try {
+            File file = new File(filePath);
+            FileInputStream fis = new FileInputStream(file);
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            byte[] b = new byte[1024];
+            int n;
+            while ((n = fis.read(b)) != -1) {
+                bos.write(b, 0, n);
+            }
+            fis.close();
+            bos.close();
+            buffer = bos.toByteArray();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return buffer;
+    }
+
+    /**
+     * byte[]转File
+     *
+     * @param bytes
+     * @param filePath
+     * @throws IOException
+     */
+    public void byte2File(byte[] bytes, String filePath) throws IOException {
+
+        File file = new File(filePath);
+
+        OutputStream output = new FileOutputStream(file);
+
+        BufferedOutputStream bufferedOutput = new BufferedOutputStream(output);
+
+        bufferedOutput.write(bytes);
+    }
+
 }
