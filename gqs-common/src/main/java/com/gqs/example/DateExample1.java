@@ -37,5 +37,7 @@ public class DateExample1 {
 
         System.out.println(format1);
         System.out.println(format.format(cal1.getTime()));
+        System.out.println(cal1.get(Calendar.YEAR));
+        System.out.println(cal1.get(Calendar.MONTH));
     }
 }

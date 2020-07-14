@@ -66,7 +66,7 @@ public class ExcelUtil {
                 break;
             case Cell.CELL_TYPE_NUMERIC: //数值类型
                 if (HSSFDateUtil.isCellDateFormatted(cell)) {  //判断日期类型
-                    cellValue = DateUtils.formatDateByFormat(cell.getDateCellValue(), "yyyy-MM-dd");
+//                    cellValue = DateUtils.formatDateByFormat(cell.getDateCellValue(), "yyyy-MM-dd");
                 } else {  //否
                     cellValue = new DecimalFormat("#.######").format(cell.getNumericCellValue());
                 }
