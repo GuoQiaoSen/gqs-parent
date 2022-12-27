@@ -19,4 +19,14 @@ public class StringUtil {
         return pattern.matcher(value).matches();
     }
 
+    /**
+     * 判断字符串是否全数字
+     *
+     * @param value
+     * @return
+     */
+    public static boolean isNumber(String value) {
+        return value.matches("[0-9]+");
+    }
+
 }
