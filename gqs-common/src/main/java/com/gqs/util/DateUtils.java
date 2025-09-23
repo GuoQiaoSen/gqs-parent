@@ -1,6 +1,8 @@
 package com.gqs.util;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -81,5 +83,19 @@ public class DateUtils {
         {
             return day2 - day1;
         }
+    }
+
+    /**
+     * 判断当前时间是否在开始时间和结束时间之间（包括边界）。
+     *
+     * @param startTime 开始时间
+     * @param endTime   结束时间
+     * @return 如果当前时间在开始时间和结束时间之间，则返回 true，否则返回 false
+     */
+    public static boolean isCurrentTimeBetween(Date startTime, Date endTime) {
+        LocalDateTime now = LocalDateTime.now(ZoneId.systemDefault());
+        LocalDateTime start = startTime.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+        LocalDateTime end = endTime.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+        return !now.isBefore(start) && !now.isAfter(end);
     }
 }

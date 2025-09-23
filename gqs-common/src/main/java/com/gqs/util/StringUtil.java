@@ -1,5 +1,10 @@
 package com.gqs.util;
 
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Pattern;
 
 /**
@@ -27,6 +32,19 @@ public class StringUtil {
      */
     public static boolean isNumber(String value) {
         return value.matches("[0-9]+");
+    }
+
+    /**
+     * 字符串转集合
+     *
+     * @param str 例：a,b,c
+     * @return List<String>
+     */
+    public static List<String> str2List(String str) {
+        if (StringUtils.isBlank(str)) {
+            return new ArrayList<>();
+        }
+        return Arrays.asList(str.split(","));
     }
 
 }
